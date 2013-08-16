@@ -1,0 +1,17 @@
+{
+  "name": "top-most",
+  "version": "0.1.0",
+  "description": "respond to the top most visible DOM element changing",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jkroso/top-most.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkroso/top-most/issues"
+  },
+  "keywords": ["top","resize","scroll"],
+  "author": "Jake Rosoman",
+  "license": "MIT"
+}

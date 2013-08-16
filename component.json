@@ -1,0 +1,23 @@
+{
+  "name": "top-most",
+  "repo": "jkroso/top-most",
+  "description": "respond to the top most visible DOM element changing",
+  "version": "0.1.0",
+  "keywords": [
+    "top",
+    "resize",
+    "scroll"
+  ],
+  "dependencies": {
+    "jkroso/viewport": "0.1.4",
+    "jkroso/emitter": "0.7.0"
+  },
+  "development": {
+    "component/classes": "1.1.3",
+    "jkroso/serve": "1.4.8"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT"
+}
