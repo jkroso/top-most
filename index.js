@@ -12,8 +12,7 @@ var Emitter = require('emitter')
 
 module.exports = function(items, fn){
 	var cell = new TopCell(items)
-	if (fn) cell.on('change', fn)
-	cell.change()
+	if (fn) cell.on('change', fn).change()
 	return cell
 }
 

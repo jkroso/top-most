@@ -1,6 +1,6 @@
 {
   "name": "top-most",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "respond to the top most visible DOM element changing",
   "dependencies": {},
   "devDependencies": {},

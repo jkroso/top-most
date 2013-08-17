@@ -2,7 +2,7 @@
   "name": "top-most",
   "repo": "jkroso/top-most",
   "description": "respond to the top most visible DOM element changing",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "keywords": [
     "top",
     "resize",
