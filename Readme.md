@@ -37,3 +37,7 @@ var top-most = require('top-most')
 ## Running the Examples
 
 Just run `make` and navigate your browser to them.
+
+## Thanks
+
+Inspired by and based on [timoxley/scroll-position](//github.com/timoxley/scroll-position)
