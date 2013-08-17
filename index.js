@@ -32,8 +32,6 @@ Emitter(TopCell.prototype)
 /**
  * check if the top most node has changed. If it has a
  * "change" event will be emitted.
- *
- * @api private
  */
 
 TopCell.prototype.change = function(){
