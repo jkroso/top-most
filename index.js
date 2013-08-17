@@ -30,6 +30,28 @@ function TopCell(els){
 Emitter(TopCell.prototype)
 
 /**
+ * how many pixels must be shown before
+ * a node is considered "on-screen"
+ * 
+ * @type {Number}
+ * @api private
+ */
+
+TopCell.prototype.buf = 0
+
+/**
+ * get/set the Cells buffer
+ * @param {Number} [n]
+ * @return {this|Number}
+ */
+
+TopCell.prototype.buffer = function(n){
+	if (typeof n != 'number') return this.buf
+	this.buf = n
+	return this
+}
+
+/**
  * check if the top most node has changed. If it has a
  * "change" event will be emitted.
  */
@@ -37,7 +59,7 @@ Emitter(TopCell.prototype)
 TopCell.prototype.change = function(){
 	var els = this.els
 	for (var i = 0, len = els.length - 1; i < len; i++) {
-		if (bottom(els[i]) > 0) break
+		if (bottom(els[i]) > this.buf) break
 	}
 	var old = this.value
 	var top = els[i]
