@@ -1,4 +1,5 @@
 
+var setter = require('setter-method')
 var viewport = require('viewport')
 var Emitter = require('emitter')
 
@@ -18,8 +19,9 @@ module.exports = function(items, fn){
 
 function TopCell(els){
 	this.els = els
-	viewport.on('resize', this.change, this)
-	viewport.on('scroll', this.change, this)
+	this.change = this.change.bind(this)
+	viewport.on('resize', this.change)
+	viewport.on('scroll', this.change)
 }
 
 /**
@@ -29,36 +31,27 @@ function TopCell(els){
 Emitter(TopCell.prototype)
 
 /**
- * how many pixels must be shown before
- * a node is considered "on-screen"
+ * Add setter method for "buffer". The number of pixels 
+ * which must be shown before a node is considered 
+ * on screen
  * 
- * @type {Number}
- * @api private
- */
-
-TopCell.prototype.buf = 0
-
-/**
- * get/set the Cells buffer
  * @param {Number} [n]
  * @return {this|Number}
  */
 
-TopCell.prototype.buffer = function(n){
-	if (typeof n != 'number') return this.buf
-	this.buf = n
-	return this
-}
+setter(TopCell.prototype, 'buffer', 0)
 
 /**
  * check if the top most node has changed. If it has a
  * "change" event will be emitted.
+ *
+ * @api public
  */
 
 TopCell.prototype.change = function(){
 	var els = this.els
 	for (var i = 0, len = els.length - 1; i < len; i++) {
-		if (bottom(els[i]) > this.buf) break
+		if (bottom(els[i]) > this._buffer) break
 	}
 	var old = this.value
 	var top = els[i]
@@ -73,8 +66,8 @@ TopCell.prototype.change = function(){
  */
 
 TopCell.prototype.destroy = function(){
-	viewport.off('resize', this.change, this)
-	viewport.off('scroll', this.change, this)
+	viewport.off('resize', this.change)
+	viewport.off('scroll', this.change)
 }
 
 function bottom(node){

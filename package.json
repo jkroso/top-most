@@ -1,16 +1,18 @@
 {
   "name": "top-most",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "respond to the top most visible DOM element changing",
-  "dependencies": {},
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jkroso/top-most.git"
+  "dependencies": {
+    "viewport": "jkroso/viewport#0.1.5",
+    "emitter": "jkroso/emitter#0.9.0",
+    "setter-method": "~0.1.0"
   },
-  "bugs": {
-    "url": "https://github.com/jkroso/top-most/issues"
+  "devDependencies": {
+    "classes": "jkroso/classes",
+    "serve": "jkroso/serve"
   },
+  "repository": "git://github.com/jkroso/top-most.git",
+  "bugs": "https://github.com/jkroso/top-most/issues",
   "keywords": ["top","resize","scroll"],
   "author": "Jake Rosoman",
   "license": "MIT"

@@ -70,7 +70,7 @@
 	var active = tabs[0]
 
 	topmost(items, function(el, i){
-		classes(active).remove('active')
-		classes(active = tabs[i]).add('active')
+		classes.remove('active', active)
+		classes.add('active', active = tabs[i])
 	})
 </script>
