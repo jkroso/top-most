@@ -12,21 +12,16 @@ _With [component](//github.com/component/component), [packin](//github.com/jkros
 then in your app:
 
 ```js
-var top-most = require('top-most')
+var topmost = require('top-most')
 ```
 
 ## API
 
-- [top-most()](#topmostitemsarraynodelistfnfunction)
-- [TopCell.buffer()](#topcellbuffernnumber)
-- [TopCell.change()](#topcellchange)
-- [TopCell.destroy()](#topcelldestroy)
-
-### topmost(items:Array|Nodelist, [fn]:Function)
+### topmost(items, [fn])
 
   create a new TopCell. If you pass a function be invoked with the current top-most node and subscribed to future changes. At least ones which arise from the browser resizing or scrolling. Its up to you to notify it of other possible changes such as DOM mutation.
 
-### TopCell.buffer([n]:Number)
+### TopCell.buffer(n)
 
   get/set the Cells buffer. Buffer meaning the number of pixels which must be shown before a node is considered "on-screen"
 
@@ -45,14 +40,14 @@ var top-most = require('top-most')
 topmost(document.getElementsByTagName('section'))
   .buffer(30)
   .on('change', function(el, index){
-    console.log('the %dth item the top-most', index)
+    console.log('the %dth item is the top-most', index)
   })
   .change()
 ```
 
-## Running the Examples
+## Running the Example
 
-Just run `make` and navigate your browser to them.
+Just run `make` and navigate your browser to [example.html](example.html).
 
 ## Thanks
 
